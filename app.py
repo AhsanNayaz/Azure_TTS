@@ -22,6 +22,7 @@ def main():
         # Get values through input bars
         input_text = request.form.get("name")
         speech_synthesis_result = speech_synthesizer.speak_text_async(input_text).get()
+        return render_template("index.html", output=speech_synthesis_result)
     return render_template("index.html")
 
 
