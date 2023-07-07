@@ -6,7 +6,7 @@ import streamlit as st
 # Creates an instance of a speech config with specified subscription key and service region.
 
 # Replace with your own subscription key and service region (e.g., "westus").
-speech_key, service_region = st.secrets("SPEECH_KEY"), st.secrets("SPEECH_REGION")
+speech_key, service_region = st.secrets["SPEECH_KEY"], st.secrets["SPEECH_REGION"]
 speech_config = speechsdk.SpeechConfig(subscription=speech_key, region=service_region)
 
 # Set the voice name, refer to https://aka.ms/speech/voices/neural for full list.
