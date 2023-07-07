@@ -23,7 +23,7 @@ def main():
         # Unpickle classifier
         # Get values through input bars
         input_text = request.form.get("name")
-        res = speech_synthesizer.speak_text_async(input_text)
+        res = speech_synthesizer.speak_text_async(input_text).get()
         return render_template("index.html", output=res)
     return render_template("index.html")
 
