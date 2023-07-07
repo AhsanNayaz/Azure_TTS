@@ -13,8 +13,9 @@ speech_config = speechsdk.SpeechConfig(subscription=speech_key, region=service_r
 speech_config.speech_synthesis_voice_name = "en-US-AriaNeural"
 
 # Creates a speech synthesizer using the default speaker as audio output.
-audio_config = speechsdk.audio.AudioOutputConfig(use_default_speaker=True)
-speech_synthesizer = speechsdk.SpeechSynthesizer(speech_config=speech_config, audio_config=audio_config)
+file_name = "outputaudio.wav"
+file_config = speechsdk.audio.AudioOutputConfig(filename=file_name)
+speech_synthesizer = speechsdk.SpeechSynthesizer(speech_config=speech_config, audio_config=file_config)
 
 # Receives a text from console input.
 
